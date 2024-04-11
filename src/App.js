@@ -6,18 +6,18 @@ import axios from "axios";
 function App() {
   const [show, setShow] = useState(false);
   const [data, setData] = useState([]);
-
+  const fetchData = async () => {
+    try {
+      const response = await axios.get(
+        "https://6616880db8b8e32ffc7dc6e6.mockapi.io/Checkout"
+      );
+      setData(response.data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(
-          "https://6616880db8b8e32ffc7dc6e6.mockapi.io/Checkout"
-        );
-        setData(response.data);
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+ 
     fetchData();
   }, []);
 
@@ -34,7 +34,7 @@ function App() {
       <div>
         {show ? (
           <div className="w-100 d-flex gap-2 mt-5">
-            <ModalForm setShow={setShow} setData={setData}/> <ProductsCard />
+            <ModalForm setShow={setShow} setData={setData} data={data} fetchData={fetchData} /> <ProductsCard />
           </div>
         ) : (
           <div className="d-flex align-items-center justify-content-center mt-5">
