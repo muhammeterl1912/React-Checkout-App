@@ -28,7 +28,7 @@ function ModalForm({ data, fetchData }) {
 
   const postData = async () => {
     try {
-      const res = await axios.post(
+       await axios.post(
         "https://6616880db8b8e32ffc7dc6e6.mockapi.io/Checkout",
         post
       );

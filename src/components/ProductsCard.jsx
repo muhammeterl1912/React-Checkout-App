@@ -1,16 +1,14 @@
-
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
-function ProductsCard({data}) {
-  
+function ProductsCard({ data }) {
   return (
     <Row xs={1} md={2} className="g-4">
       {data?.map((item, idx) => (
         <Col key={idx}>
           <Card>
-            <Card.Img variant="top" src={item?.img} alt ={item?.name}/>
+            <Card.Img variant="top" src={item?.image} alt={item?.name} />
             <Card.Body>
               <Card.Title>{item?.name}</Card.Title>
               <Card.Text>
