@@ -20,7 +20,7 @@ function App() {
     };
     fetchData();
   }, []);
-console.log(data)
+
   return (
     <div>
       <h1 className="text-danger text-center">CheckOut App</h1>

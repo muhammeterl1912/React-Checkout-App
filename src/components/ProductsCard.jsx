@@ -10,9 +10,9 @@ function ProductsCard({data}) {
       {data?.map((item, idx) => (
         <Col key={idx}>
           <Card>
-            <Card.Img variant="top" src={data?.img} />
+            <Card.Img variant="top" src={item?.img} alt ={item?.name}/>
             <Card.Body>
-              <Card.Title>{data?.img}</Card.Title>
+              <Card.Title>{item?.name}</Card.Title>
               <Card.Text>
                 This is a longer card with supporting text below as a natural
                 lead-in to additional content. This content is a little bit
