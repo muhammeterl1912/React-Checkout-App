@@ -12,7 +12,7 @@ function ModalFormCard({ postData, fetchData }) {
   }, [postData]);
 
   return (
-    <Card style={{ width: "20rem", height: "25rem" }}>
+    <Card  style={{ width: "20rem", height: "25rem" }}>
       <Card.Img variant="top" alt={postData?.name} src={postData?.image} />
       <Card.Body className="h-100">
         <Card.Title>{postData?.name} </Card.Title>
@@ -40,7 +40,7 @@ function ModalFormCard({ postData, fetchData }) {
         </div>
         <h6 className="mt-4">Product Total: $ {postData?.price * +quantity}</h6>
       </Card.Body>
-      <Table striped="columns">
+      <Table striped="columns" className="mb-5">
         <thead>
           <tr>
             <th>Subtotal</th>

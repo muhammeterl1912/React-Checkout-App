@@ -38,7 +38,7 @@ function App() {
           </div>
         ) : (
           <div className="d-flex align-items-center justify-content-center mt-5">
-            <ProductsCard data={data} />
+            <ProductsCard data={data} fetchData={fetchData}/>
           </div>
         )}
       </div>

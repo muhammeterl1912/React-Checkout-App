@@ -109,7 +109,7 @@ function ModalForm({ data, fetchData }) {
               </Button>
             </Form>
           </div>
-        </div>{" "}
+        </div>
         {showCard && (
           <div className="col-6">
             <ModalFormCard postData={postData} fetchData={fetchData} />
