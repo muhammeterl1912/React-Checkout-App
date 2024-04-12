@@ -14,6 +14,7 @@ function ModalForm({ data, fetchData }) {
     amount: "",
   });
   const [showCard, setShowCard] = useState(false);
+  const [postData, setPostdata] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -22,16 +23,17 @@ function ModalForm({ data, fetchData }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    postData();
+    postDataApi();
     setPost({ name: "", image: "", price: "", amount: "" });
   };
 
-  const postData = async () => {
+  const postDataApi = async () => {
     try {
-       await axios.post(
+      const data=  await  axios.post(
         "https://6616880db8b8e32ffc7dc6e6.mockapi.io/Checkout",
         post
       );
+      setPostdata(data.data)
     } catch (error) {
       console.log(error);
     }
@@ -110,7 +112,7 @@ function ModalForm({ data, fetchData }) {
         </div>{" "}
         {showCard && (
           <div className="col-6">
-            <ModalFormCard data={data} fetchData={fetchData} />
+            <ModalFormCard postData={postData} fetchData={fetchData} />
           </div>
         )}
       </div>
