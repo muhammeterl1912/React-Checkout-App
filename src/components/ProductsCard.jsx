@@ -9,7 +9,10 @@ import axios from "axios";
 function ProductsCard({ data, fetchData }) {
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://6616880db8b8e32ffc7dc6e6.mockapi.io/Checkout/${id+1}`);
+      fetchData();
+      await axios.delete(
+        `https://6616880db8b8e32ffc7dc6e6.mockapi.io/Checkout/${id}`
+      );
       fetchData();
     } catch (error) {
       console.log(error);
@@ -19,9 +22,11 @@ function ProductsCard({ data, fetchData }) {
   return (
     <Row xs={1} md={2} className="g-4 container">
       {data?.map((item, idx) => (
-        <Col key={idx}>
-          <Card>
-            <Card.Img variant="top" src={item?.image} alt={item?.name} />
+<div className="row ">
+<div className="col-7">
+    <Col key={idx}>
+          <Card >
+            <Card.Img variant="top" src={item?.image} alt={item?.name} className="mx-auto d-block" />
             <Card.Body>
               <Card.Title className="text-center">{item?.name}</Card.Title>
               <h5 className="mt-3">Quantity: {item?.amount}</h5>
@@ -30,15 +35,17 @@ function ProductsCard({ data, fetchData }) {
               </h3>
               <Button
                 variant="primary"
-                type="button" 
+                type="button"
                 className="bg-danger text-white mt-5 d-block m-auto border-0"
-                onClick={() => handleDelete(idx)} 
+                onClick={() => handleDelete(item.id)}
               >
                 <MdDelete /> Delete
               </Button>
             </Card.Body>
           </Card>
         </Col>
+    </div>
+</div>
       ))}
     </Row>
   );

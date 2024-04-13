@@ -33,8 +33,8 @@ function App() {
       </Button>
       <div>
         {show ? (
-          <div className="w-100 d-flex gap-2 mt-5">
-            <ModalForm setShow={setShow} setData={setData} data={data} fetchData={fetchData} /> <ProductsCard />
+          <div className="  mt-5">
+            <ModalForm setShow={setShow} setData={setData}fetchData={fetchData} /> <ProductsCard />
           </div>
         ) : (
           <div className="d-flex align-items-center justify-content-center mt-5">
