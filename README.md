@@ -4,7 +4,7 @@
 This React Checkout App serves as an admin panel for managing products. Users can add new products, delete existing ones, and view the current product list.
 
 ## Demo
-Check out the live demo [here](https://stellular-gingersnap-bed721.netlify.app/).
+👉 Check out the live demo [here](https://stellular-gingersnap-bed721.netlify.app/).
 
 ## Features
 - **Add Product**: Users can add a new product by filling out the required information and submitting the form.
