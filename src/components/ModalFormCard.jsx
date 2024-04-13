@@ -19,7 +19,7 @@ function ModalFormCard({ postData, fetchData }) {
         <h3 className="text-danger text-center mt-3">
           <span className="text-black">Price:</span> {postData?.price}$
         </h3>
-        <div className=" m-auto mt-3 d-flex border border-black w-50 justify-content-between">
+        <div className=" m-auto mt-3 d-flex w-50 justify-content-between">
           <Button
             type="submit"
             className="bg-white text-black  d-block  border-0"

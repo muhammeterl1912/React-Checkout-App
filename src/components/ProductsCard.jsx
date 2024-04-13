@@ -20,13 +20,16 @@ function ProductsCard({ data, fetchData }) {
   };
 
   return (
-    <Row xs={1} md={2} className="g-4 container">
+    <Row className="container d-flex gap-4 ">
       {data?.map((item, idx) => (
-<div className="row ">
-<div className="col-7">
-    <Col key={idx}>
-          <Card >
-            <Card.Img variant="top" src={item?.image} alt={item?.name} className="mx-auto d-block" />
+        <Col key={idx} xs={12} sm={6} md={4} lg={3}>
+          <Card className="d-flex flex-column h-100">
+            <Card.Img
+              variant="top"
+              src={item?.image}
+              alt={item?.name}
+              className="mx-auto d-block"
+            />
             <Card.Body>
               <Card.Title className="text-center">{item?.name}</Card.Title>
               <h5 className="mt-3">Quantity: {item?.amount}</h5>
@@ -36,7 +39,7 @@ function ProductsCard({ data, fetchData }) {
               <Button
                 variant="primary"
                 type="button"
-                className="bg-danger text-white mt-5 d-block m-auto border-0"
+                className="bg-danger text-white mt-5 d-block mx-auto border-0"
                 onClick={() => handleDelete(item.id)}
               >
                 <MdDelete /> Delete
@@ -44,8 +47,6 @@ function ProductsCard({ data, fetchData }) {
             </Card.Body>
           </Card>
         </Col>
-    </div>
-</div>
       ))}
     </Row>
   );
