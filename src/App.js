@@ -34,7 +34,7 @@ function App() {
       <div>
         {show ? (
           <div className="  mt-5">
-            <ModalForm setShow={setShow} setData={setData}fetchData={fetchData} /> <ProductsCard />
+            <ModalForm fetchData={fetchData} /> <ProductsCard />
           </div>
         ) : (
           <div className="d-flex align-items-center justify-content-center mt-5 "style={{minHeight:"100vh"}} >
